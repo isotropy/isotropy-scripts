@@ -17,10 +17,10 @@ const log = message => {
   console.log((typeof message !== "undefined" ? message : "").trim());
 };
 
-const refreshDep = async function(npmModule, projectPath, _log) {
-  _log(`Delete ${npmModule}`);
+const refreshDep = async function(npmModule, projectPath) {
+  log(`Delete ${npmModule}`);
   await exec(`rm node_modules/${npmModule} -rf`);
-  _log(await exec(`npm i ${npmModule}`));
+  log(await exec(`npm i ${npmModule}`));
 };
 
 taskRunner(scriptName, {}, async ({ project, projectPath, options }) => {
@@ -48,10 +48,11 @@ taskRunner(scriptName, {}, async ({ project, projectPath, options }) => {
       const matches =
         typeof packageJSON.dependencies !== "undefined"
           ? Object.keys(packageJSON.dependencies).filter(
-              dep => projects.indexOf(dep) > -1
+              dep => projects.some(p => p.name === dep)
             )
           : [];
 
+      console.log(projects);
       for (let match of matches) {
         const npmModule = typeof match === "string" ? match : match.name;
         if (

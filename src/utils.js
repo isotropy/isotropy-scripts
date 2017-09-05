@@ -13,8 +13,11 @@ export function exec(cmd, print = true) {
   let strErr = "";
   return new Promise((resolve, reject) => {
     const child = shspawn(cmd);
-    child.stdout.pipe(process.stdout)
     
+    if (print) {
+      child.stdout.pipe(process.stdout)
+    }
+
     child.stdout.on('data', function (data) {
       strOut += data;
     });
