@@ -24,7 +24,8 @@ taskRunner(
 
     _log(`cloning ${project}...`);
     await exec(`git clone ${repo}/${project}`);
-
+    process.chdir(projectPath)
+    
     await exec(`yarn`);
   }
 );
