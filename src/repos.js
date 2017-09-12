@@ -12,7 +12,8 @@ const repos = {
       "babel-plugin-isotropy-mongodb",
       "babel-plugin-isotropy-fs",
       "babel-plugin-isotropy-rpc",
-      "isotropy-ide"
+      "isotropy-ide",
+      "pickle"
     ]
   }
 };
