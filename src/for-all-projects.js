@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { ifDirExists } from "./utils";
+import { exec, ifDirExists } from "./utils";
 import repos from "./repos";
 
 let curdir = process.cwd();
@@ -33,7 +33,12 @@ const func = async (scriptName, options, ifExists, ifMissing) => {
         params.projectPath = projectPath;
         let exists = false;
 
-        if (await ifDirExists(projectPath)) {
+        const dirExists = await ifDirExists(projectPath);
+        if (!dirExists && options.createDir) {
+          await exec(`mkdir ${projectPath}`);
+        }
+
+        if (dirExists || options.createDir) {
           params.projectPath = projectPath;
           process.chdir(projectPath);
           newLine();
