@@ -7,6 +7,7 @@ const repos = {
       "isotropy-ast-analyzer-fs",
       "isotropy-ast-analyzer-rpc",
       "isotropy-ast-analyzer-keyvaluedb",
+      "isotropy-ast-analyzer-replacelib",
       "isotropy-lib-mongodb",
       "isotropy-lib-fs",
       "isotropy-lib-rpc",
@@ -15,6 +16,7 @@ const repos = {
       "babel-plugin-isotropy-fs",
       "babel-plugin-isotropy-rpc",
       "babel-plugin-isotropy-keyvaluedb",
+      "babel-plugin-isotropy-replacelib",
       "isotropy-ide",
       "pickle",
     ]
