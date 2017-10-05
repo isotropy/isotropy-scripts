@@ -5,7 +5,7 @@ import promisify from "nodefunc-promisify";
 
 import { exec } from "./utils";
 
-const scriptName = "ISO_GIT_PULL";
+const scriptName = "ISO_YARN";
 
 const log = message => {
   console.log((typeof message !== "undefined" ? message : "").trim());
@@ -15,6 +15,7 @@ taskRunner(scriptName, {}, async ({ project, projectPath }) => {
   let _log = msg => {
     log(`${project}: ${msg}`);
   };
-  _log("Pull from git");
-  await exec(`git pull`);
+  _log("Refreshing node_modules");
+  await exec(`rm node_modules -rf`);
+  await exec(`yarn`);
 });

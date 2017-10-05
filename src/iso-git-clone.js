@@ -5,7 +5,7 @@ import promisify from "nodefunc-promisify";
 import path from "path";
 import { ifDirExists, exec } from "./utils";
 
-const scriptName = "ISO_GIT_STATUS";
+const scriptName = "ISO_GIT_CLONE";
 
 const log = message => {
   console.log((typeof message !== "undefined" ? message : "").trim());

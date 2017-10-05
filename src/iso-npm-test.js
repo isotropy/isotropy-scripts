@@ -5,7 +5,7 @@ import promisify from "nodefunc-promisify";
 
 import { exec, ifFileExists, readPackage } from "./utils";
 
-const scriptName = "ISO_GIT_STATUS";
+const scriptName = "ISO_NPM_TEST";
 
 const log = message => {
   console.log((typeof message !== "undefined" ? message : "").trim());

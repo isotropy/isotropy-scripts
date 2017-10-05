@@ -1,6 +1,7 @@
 {
   "author": "Jeswin<jeswin@agilehead.com>",
   "dependencies": {
+    "colors": "^1.1.2",
     "crankshaft": "*"
   },
   "devDependencies": {
