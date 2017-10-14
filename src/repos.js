@@ -2,7 +2,6 @@ const repos = {
   isotropy: {
     repo: "https://github.com/isotropy/",
     projects: [
-      "ast-crumbs",
       "chimpanzee",
       "babel-plugin-isotropy-mongodb",
       "babel-plugin-isotropy-filesystem",
@@ -10,27 +9,19 @@ const repos = {
       "babel-plugin-isotropy-keyvaluedb",
       "babel-plugin-isotropy-replacelib",
       "babel-plugin-isotropy-pubsub",
+      "ide",
       "isotropy-ast-analyzer-db",
       "isotropy-ast-analyzer-filesystem",
       "isotropy-ast-analyzer-webservices",
       "isotropy-ast-analyzer-keyvaluedb",
       "isotropy-ast-analyzer-replacelib",
       "isotropy-ast-analyzer-pubsub",
-      "isotropy-eval",
-      "isotropy-ide",
       "isotropy-lib-mongodb",
       "isotropy-lib-filesystem",
       "isotropy-lib-webservices",
       "isotropy-lib-keyvaluedb",
       "isotropy-lib-pubsub",
-      "isotropy-server-eval",
       "lazily",
-      "lazily",
-      "lazily",
-      "lazily-async",
-      "pickle",
-      "poetry2",
-      "simple-todos"
     ]
   }
 };
