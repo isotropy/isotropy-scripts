@@ -3,6 +3,7 @@ const repos = {
     repo: "https://github.com/isotropy/",
     projects: [
       "chimpanzee",
+      "chimpanzee-babylon-utils",
       "babel-plugin-isotropy-mongodb",
       "babel-plugin-isotropy-filesystem",
       "babel-plugin-isotropy-webservices",
@@ -21,6 +22,7 @@ const repos = {
       "isotropy-lib-webservices",
       "isotropy-lib-keyvaluedb",
       "isotropy-lib-pubsub",
+      "isotropy-plugin-dev-utils",
       "lazily",
     ]
   }
