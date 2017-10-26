@@ -17,6 +17,7 @@ const repos = {
       "isotropy-ast-analyzer-keyvaluedb",
       "isotropy-ast-analyzer-replacelib",
       "isotropy-ast-analyzer-pubsub",
+      "isotropy-expressions",
       "isotropy-lib-mongodb",
       "isotropy-lib-filesystem",
       "isotropy-lib-webservices",
