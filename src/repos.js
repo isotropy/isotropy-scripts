@@ -10,6 +10,7 @@ const repos = {
       "babel-plugin-isotropy-replacelib",
       "babel-plugin-isotropy-pubsub",
       "ide",
+      "isotropy-analyzer-errors",
       "isotropy-analyzer-utils",
       "isotropy-ast-analyzer-db",
       "isotropy-ast-analyzer-filesystem",
