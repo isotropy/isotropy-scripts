@@ -1,24 +1,78 @@
-# isotropy-scripts
-A bunch of useful scripts
+# Bash Fury
+A tool to automate tasks if you have multiple repositories.
 
-## Setup
+Installation
+------------
 
-Do this in .bashrc or wherever OSX stores it.
-
-```bash
-export ISOTROPY_GIT_REPOS_PATH="/your/repos/dir"
-export PATH=$PATH:~/your/repos/dir/isotropy-scripts:~/your/repos/dir/isotropy-scripts/dist
+```
+npm i -g bashfury
 ```
 
-Do a build in the isotropy-scripts directory
-```
-./build.sh
+Configuration
+-------------
+
+Configure your repos in .gitfury/config.js
+
+The config file looks like this
+
+```javascript
+function gitlab(group, repo) {
+  return ["gitlab", `git@gitlab.com:${group}/${repo}.git`];
+}
+
+function github(group, repo) {
+  return ["github", `https://github.com/${group}/${repo}`];
+}
+
+export default const repos = {
+  isotropy: {
+    groups: {
+      jeswin: {
+        primary: gitlab,
+        mirrors: [github],
+        repos: {
+          private: ["my-scripts"],
+          public: [
+            "merge-tree",
+            "redux-jetpack",
+          ]
+        }
+      },
+      nsoap: {
+        primary: gitlab,
+        mirrors: [],
+        repos: {
+          public: [
+            "nsoap",
+            "nsoap-express",
+            "nsoap-koa",
+            "sailboat",
+            "sailboat-playground"
+          ]
+        }
+      }
+    }
+  }
+};
 ```
 
-That's it. You'll see a bunch of iso-* commands when you type iso<tab>.
+Usage
+-----
 
-- iso-git-clone Clones all projects into ISOTROPY_GIT_REPOS_PATH
-- iso-git-status Prints git status on all projects
-- iso-git-pull Pulls all projects
-- iso-npm-test Runs npm test if defined
-- iso-update-deps Updates are isotropy dependencies to the latest available version.
+### Clone all projects
+
+```
+bashfury repos.js | xargs git clone 
+```
+
+### Clone all projects from a "mirror".
+
+```
+git-fury --clone all --dir ~/my-repos --mirror github
+```
+
+### Rewrite .git/config with template
+
+```
+git-fury --rewrite-config --template ~/path/to/template
+```
